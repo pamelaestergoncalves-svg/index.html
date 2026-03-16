@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Antonella - 1 Aninho</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
@@ -13,59 +14,69 @@ body{
 margin:0;
 font-family:'Fredoka', sans-serif;
 text-align:center;
-background:linear-gradient(#87CEEB,#b8f1a6);
+background:linear-gradient(#8fd3ff,#b8f5a2);
 overflow-x:hidden;
 }
 
-/* BALÕES */
+/* NUVENS */
 
-.balao{
+.nuvem{
 position:absolute;
-bottom:-120px;
-font-size:40px;
-animation:subir 8s linear infinite;
+font-size:60px;
+animation:nuvem 20s linear infinite;
 }
 
-.balao:nth-child(1){left:10%;}
-.balao:nth-child(2){left:30%; animation-delay:2s;}
-.balao:nth-child(3){left:50%; animation-delay:4s;}
-.balao:nth-child(4){left:70%; animation-delay:1s;}
-.balao:nth-child(5){left:90%; animation-delay:3s;}
+.nuvem:nth-child(1){top:40px; left:-100px;}
+.nuvem:nth-child(2){top:120px; left:-200px; animation-delay:10s;}
 
-@keyframes subir{
-0%{transform:translateY(0)}
-100%{transform:translateY(-120vh)}
+@keyframes nuvem{
+0%{transform:translateX(0)}
+100%{transform:translateX(120vw)}
 }
+
+/* GRAMA */
+
+.grama{
+position:fixed;
+bottom:0;
+width:100%;
+height:130px;
+background:#66dd66;
+}
+
+/* CONTAINER */
 
 .container{
 max-width:750px;
-margin:60px auto;
+margin:80px auto;
 background:white;
-padding:35px;
+padding:40px;
 border-radius:25px;
 box-shadow:0 15px 30px rgba(0,0,0,0.2);
 }
 
+/* ANIMAIS */
+
 .animais{
-font-size:60px;
+font-size:80px;
 animation:pular 2s infinite;
 }
 
 @keyframes pular{
 0%{transform:translateY(0)}
-50%{transform:translateY(-10px)}
+50%{transform:translateY(-12px)}
 100%{transform:translateY(0)}
 }
+
+/* TEXTO */
 
 h1{
 color:#8B4513;
 font-size:42px;
-margin-bottom:10px;
 }
 
 h2{
 color:#2e8b57;
-margin-top:0;
 }
 
 p{
@@ -77,25 +88,27 @@ font-size:20px;
 margin:12px 0;
 }
 
+/* BOTÃO */
+
 .botao{
 margin-top:20px;
-padding:14px 30px;
+padding:15px 30px;
 font-size:20px;
 border:none;
-border-radius:25px;
-background:#ffcc66;
+border-radius:30px;
+background:#ffd966;
 cursor:pointer;
 transition:0.3s;
 }
 
 .botao:hover{
-background:#ffb347;
-transform:scale(1.05);
+background:#ffbf00;
+transform:scale(1.07);
 }
 
 footer{
 margin-top:25px;
-color:#666;
+color:#555;
 }
 
 </style>
@@ -103,55 +116,69 @@ color:#666;
 
 <body>
 
-<div class="balao">🎈</div>
-<div class="balao">🎈</div>
-<div class="balao">🎈</div>
-<div class="balao">🎈</div>
-<div class="balao">🎈</div>
+<div class="nuvem">☁️</div>
+<div class="nuvem">☁️</div>
 
 <div class="container">
 
 <div class="animais">
-🐮 🐷 🐔 🌻 🚜
+🐮 🐷 🐔 🐑 🌻 🚜
 </div>
 
 <h1>Você está convidado!</h1>
 
-<h2>Antonella faz 1 aninho</h2>
+<h2>Antonella faz 1 aninho 🎂</h2>
 
 <p>
-Nossa pequena fazendeirinha está completando
+Nossa pequena fazendeirinha está completando  
 <b>1 aninho</b>! 🌾  
-Venha comemorar esse momento especial
-cheio de alegria, doces e diversão!
+
+Venha comemorar esse dia especial  
+cheio de alegria, brincadeiras e diversão!
 </p>
 
 <div class="info">
-📅 <b>Data:</b> coloque a data
+📅 <b>Data:</b> 13 de maio 2025
 </div>
 
 <div class="info">
-⏰ <b>Horário:</b> coloque o horário
+⏰ <b>Horário:</b> 17h00
 </div>
 
 <div class="info">
-📍 <b>Local:</b> coloque o endereço
+📍 <b>Local:</b> Rancho HL - Nova Esperança
 </div>
+
+<button class="botao" onclick="tocarMusica()">
+🎵 Tocar Música da Fazendinha
+</button>
+
+<br>
 
 <button class="botao" onclick="confirmar()">
-Confirmar Presença
+🎈 Confirmar Presença
 </button>
 
 <footer>
-Esperamos você na fazendinha da Antonella! 💛
+Esperamos você na fazendinha da Antonella! 🐄🌻
 </footer>
 
 </div>
 
+<div class="grama"></div>
+
+<audio id="musica">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4d1c7bbd2f.mp3?filename=kids-farm-happy-110997.mp3" type="audio/mpeg">
+</audio>
+
 <script>
 
+function tocarMusica(){
+document.getElementById("musica").play()
+}
+
 function confirmar(){
-alert("Confirmado! Esperamos você no aniversário da Antonella 🐄🎉")
+alert("Sua presença foi confirmada! 🎉🐄")
 }
 
 </script>
