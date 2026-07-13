@@ -1,186 +1,179 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Antonella - 1 Aninho</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<title>JV CELL - Loja de Celulares</title>
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
 body{
-margin:0;
-font-family:'Fredoka', sans-serif;
-text-align:center;
-background:linear-gradient(#8fd3ff,#b8f5a2);
-overflow-x:hidden;
+    background:#f4f4f4;
 }
 
-/* NUVENS */
-
-.nuvem{
-position:absolute;
-font-size:60px;
-animation:nuvem 20s linear infinite;
+header{
+    background:#0d47a1;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
-.nuvem:nth-child(1){top:40px; left:-100px;}
-.nuvem:nth-child(2){top:120px; left:-200px; animation-delay:10s;}
-
-@keyframes nuvem{
-0%{transform:translateX(0)}
-100%{transform:translateX(120vw)}
+nav{
+    background:#1565c0;
+    padding:15px;
+    text-align:center;
 }
 
-/* GRAMA */
-
-.grama{
-position:fixed;
-bottom:0;
-width:100%;
-height:130px;
-background:#66dd66;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
 }
 
-/* CONTAINER */
-
-.container{
-max-width:750px;
-margin:80px auto;
-background:white;
-padding:40px;
-border-radius:25px;
-box-shadow:0 15px 30px rgba(0,0,0,0.2);
+.banner{
+    background:linear-gradient(90deg,#1565c0,#42a5f5);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
 }
 
-/* ANIMAIS */
-
-.animais{
-font-size:80px;
-animation:pular 2s infinite;
+.banner h2{
+    font-size:40px;
 }
 
-@keyframes pular{
-0%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
-100%{transform:translateY(0)}
+.banner p{
+    margin:15px 0;
 }
-
-/* TEXTO */
-
-h1{
-color:#8B4513;
-font-size:42px;
-}
-
-h2{
-color:#2e8b57;
-}
-
-p{
-font-size:20px;
-}
-
-.info{
-font-size:20px;
-margin:12px 0;
-}
-
-/* BOTÃO */
 
 .botao{
-margin-top:20px;
-padding:15px 30px;
-font-size:20px;
-border:none;
-border-radius:30px;
-background:#ffd966;
-cursor:pointer;
-transition:0.3s;
+    display:inline-block;
+    background:white;
+    color:#1565c0;
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
 }
 
-.botao:hover{
-background:#ffbf00;
-transform:scale(1.07);
+.produtos{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    width:250px;
+    border-radius:15px;
+    box-shadow:0 5px 10px rgba(0,0,0,.2);
+    text-align:center;
+    padding:20px;
+}
+
+.card img{
+    width:180px;
+    height:180px;
+    object-fit:contain;
+}
+
+.card h3{
+    margin:10px 0;
+}
+
+.preco{
+    color:green;
+    font-size:22px;
+    font-weight:bold;
+    margin:10px;
+}
+
+button{
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d47a1;
 }
 
 footer{
-margin-top:25px;
-color:#555;
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
 }
-
 </style>
-</head>
 
+</head>
 <body>
 
-<div class="nuvem">☁️</div>
-<div class="nuvem">☁️</div>
+<header>
+<h1>📱 JV CELL</h1>
+<p>A melhor loja de celulares da região!</p>
+</header>
 
-<div class="container">
+<nav>
+<a href="#">Início</a>
+<a href="#">Celulares</a>
+<a href="#">Promoções</a>
+<a href="#">Contato</a>
+</nav>
 
-<div class="animais">
-🐮 🐷 🐔 🐑 🌻 🚜
+<section class="banner">
+<h2>Ofertas Imperdíveis!</h2>
+<p>Os melhores smartphones com preços incríveis.</p>
+<a class="botao" href="#">Comprar Agora</a>
+</section>
+
+<section class="produtos">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9" alt="iPhone">
+<h3>iPhone 16</h3>
+<p class="preco">R$ 6.999</p>
+<button onclick="comprar()">Comprar</button>
 </div>
 
-<h1>Você está convidado!</h1>
-
-<h2>Antonella faz 1 aninho 🎂</h2>
-
-<p>
-Nossa pequena fazendeirinha está completando  
-<b>1 aninho</b>! 🌾  
-
-Venha comemorar esse dia especial  
-cheio de alegria, brincadeiras e diversão!
-</p>
-
-<div class="info">
-📅 <b>Data:</b> 13 de maio 2025
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97" alt="Samsung">
+<h3>Galaxy S25</h3>
+<p class="preco">R$ 5.499</p>
+<button onclick="comprar()">Comprar</button>
 </div>
 
-<div class="info">
-⏰ <b>Horário:</b> 17h00
+<div class="card">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505" alt="Xiaomi">
+<h3>Xiaomi 15</h3>
+<p class="preco">R$ 3.799</p>
+<button onclick="comprar()">Comprar</button>
 </div>
 
-<div class="info">
-📍 <b>Local:</b> Rancho HL - Nova Esperança
-</div>
-
-<button class="botao" onclick="tocarMusica()">
-🎵 Tocar Música da Fazendinha
-</button>
-
-<br>
-
-<button class="botao" onclick="confirmar()">
-🎈 Confirmar Presença
-</button>
+</section>
 
 <footer>
-Esperamos você na fazendinha da Antonella! 🐄🌻
+<p>📍 JV CELL</p>
+<p>📞 WhatsApp: (44) 99999-9999</p>
+<p>© 2026 - Todos os direitos reservados.</p>
 </footer>
 
-</div>
-
-<div class="grama"></div>
-
-<audio id="musica">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4d1c7bbd2f.mp3?filename=kids-farm-happy-110997.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-
-function tocarMusica(){
-document.getElementById("musica").play()
+function comprar(){
+    alert("Obrigado pela preferência! Sua compra foi adicionada ao carrinho.");
 }
-
-function confirmar(){
-alert("Sua presença foi confirmada! 🎉🐄")
-}
-
 </script>
 
 </body>
