@@ -1,1028 +1,338 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AL Serviços Gerais. Manutenção residencial e comercial em Maringá e região. Solicite seu orçamento!">
-<title>AL Serviços Gerais | Manutenção Profissional</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-:root {
-    --preto: #080907;
-    --preto2: #15160f;
-    --dourado: #dfc832;
-    --branco: #ffffff;
-    --cinza: #b8b8ad;
-    --fonte: 'Poppins', sans-serif;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--preto);
-    color: var(--branco);
-    font-family: var(--fonte);
-    overflow-x: hidden;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-html {
-    scroll-padding-top: 90px;
-}
-
-/* MENU */
-
-header {
-    width: 100%;
-    padding: 18px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(8, 9, 7, 0.96);
-    border-bottom: 1px solid #ffffff15;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(15px);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 43px;
-    font-weight: 800;
-    color: var(--dourado);
-    letter-spacing: -4px;
-}
-
-.logo span {
-    font-size: 12px;
-    letter-spacing: 2px;
-    line-height: 1.5;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    gap: 27px;
-}
-
-nav a {
-    font-size: 13px;
-    transition: .3s;
-}
-
-nav a:hover {
-    color: var(--dourado);
-}
-
-.menu-btn {
-    display: none;
-    color: white;
-    background: none;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-/* BOTÕES */
-
-.botao {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: var(--dourado);
-    color: #111109;
-    padding: 14px 23px;
-    border-radius: 40px;
-    font-weight: 600;
-    font-size: 13px;
-    transition: .3s;
-    border: 1px solid var(--dourado);
-}
-
-.botao:hover {
-    background: #f3e36d;
-    transform: translateY(-3px);
-}
-
-.botao-contorno {
-    background: transparent;
-    color: white;
-    border-color: #ffffff60;
-}
-
-.botao-contorno:hover {
-    color: var(--dourado);
-    background: transparent;
-    border-color: var(--dourado);
-}
-
-/* INÍCIO */
-
-.inicio {
-    min-height: 650px;
-    padding: 90px 7%;
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    align-items: center;
-    gap: 50px;
-    position: relative;
-    overflow: hidden;
-}
-
-.inicio::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    right: -150px;
-    top: -170px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #dfc83220, transparent 70%);
-    pointer-events: none;
-}
-
-.conteudo-inicio {
-    position: relative;
-    z-index: 2;
-    animation: surgir 1s ease;
-}
-
-.etiqueta {
-    color: var(--dourado);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 22px;
-}
-
-.etiqueta::before {
-    content: "";
-    display: inline-block;
-    width: 25px;
-    height: 2px;
-    background: var(--dourado);
-    margin: 0 10px 4px 0;
-}
-
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.inicio h1 {
-    font-size: clamp(40px, 5vw, 67px);
-    line-height: 1.14;
-    letter-spacing: -2px;
-    margin-bottom: 24px;
-}
-
-.destaque {
-    color: var(--dourado);
-}
-
-.descricao {
-    color: var(--cinza);
-    max-width: 490px;
-    line-height: 1.9;
-    font-size: 15px;
-}
-
-.botoes-inicio {
-    display: flex;
-    gap: 13px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.localizacao {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #d0d0c6;
-    margin-top: 30px;
-    font-size: 12px;
-}
-
-.localizacao span {
-    color: var(--dourado);
-    font-size: 21px;
-}
-
-/* IMAGEM PRINCIPAL */
-
-.imagem-inicio {
-    position: relative;
-    max-width: 420px;
-    width: 100%;
-    height: 470px;
-    justify-self: center;
-    border-radius: 210px 210px 18px 18px;
-    overflow: hidden;
-    border: 1px solid #dfc83280;
-    box-shadow: 0 25px 80px #0008;
-    animation: flutuar 5s ease-in-out infinite;
-}
-
-.imagem-inicio img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.etiqueta-imagem {
-    position: absolute;
-    bottom: 20px;
-    left: 15px;
-    right: 15px;
-    background: #10110de8;
-    padding: 14px;
-    border-radius: 9px;
-    font-size: 12px;
-    border: 1px solid #ffffff25;
-}
-
-/* SERVIÇOS */
-
-.servicos {
-    padding: 95px 7%;
-    background: #f3f1e8;
-    color: #171811;
-}
-
-.cabecalho-secao {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 30px;
-    margin-bottom: 42px;
-}
-
-.cabecalho-secao h2 {
-    font-size: clamp(31px, 4vw, 47px);
-    line-height: 1.2;
-}
-
-.cabecalho-secao p {
-    max-width: 330px;
-    color: #66665c;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.grade-servicos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 17px;
-}
-
-.card {
-    background: #fffef9;
-    border: 1px solid #e6e3d7;
-    border-radius: 13px;
-    padding: 27px 24px;
-    transition: .3s;
-    position: relative;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 15px 35px #00000012;
-    border-color: var(--dourado);
-}
-
-.icone {
-    width: 48px;
-    height: 48px;
-    background: #f1e9ae;
-    display: grid;
-    place-items: center;
-    border-radius: 12px;
-    font-size: 25px;
-    margin-bottom: 22px;
-}
-
-.card h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #707064;
-    font-size: 12px;
-    line-height: 1.8;
-    min-height: 65px;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 17px;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.card a:hover {
-    color: #9b8b0a;
-}
-
-.numero {
-    position: absolute;
-    top: 30px;
-    right: 23px;
-    color: #aaa99b;
-    font-size: 12px;
-}
-
-/* SOBRE */
-
-.sobre {
-    padding: 100px 7%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 75px;
-}
-
-.imagem-sobre {
-    height: 440px;
-    position: relative;
-}
-
-.imagem-sobre img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 13px;
-}
-
-.selo {
-    position: absolute;
-    width: 115px;
-    height: 115px;
-    right: -25px;
-    bottom: 25px;
-    border: 7px solid var(--preto);
-    border-radius: 50%;
-    background: var(--dourado);
-    color: var(--preto);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    transform: rotate(-10deg);
-}
-
-.selo strong {
-    font-size: 35px;
-    font-weight: 800;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.selo small {
-    font-size: 9px;
-    font-weight: 700;
-}
-
-.texto-sobre h2 {
-    font-size: clamp(30px, 3.7vw, 45px);
-    line-height: 1.2;
-    margin-bottom: 22px;
-}
-
-.texto-sobre > p {
-    color: var(--cinza);
-    font-size: 14px;
-    line-height: 1.9;
-    margin-bottom: 25px;
-}
-
-.lista-beneficios {
-    list-style: none;
-    margin-bottom: 28px;
-}
-
-.lista-beneficios li {
-    display: flex;
-    gap: 13px;
-    margin-bottom: 19px;
-    align-items: flex-start;
-}
-
-.check {
-    display: grid;
-    place-items: center;
-    background: var(--dourado);
-    color: #111;
-    min-width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    font-weight: 800;
-}
-
-.lista-beneficios strong {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 4px;
-}
-
-.lista-beneficios small {
-    color: #aaa99e;
-    font-size: 11px;
-    line-height: 1.6;
-}
-
-/* CONTATO */
-
-.contato {
-    background: #15160f;
-    padding: 75px 7%;
-}
-
-.caixa-contato {
-    padding: 42px;
-    background: var(--dourado);
-    color: #111109;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.caixa-contato h2 {
-    font-size: clamp(27px, 3.5vw, 41px);
-    line-height: 1.2;
-}
-
-.caixa-contato p {
-    margin-top: 10px;
-    font-size: 13px;
-}
-
-.botao-preto {
-    background: #10110b;
-    color: white;
-    border-color: #10110b;
-    white-space: nowrap;
-}
-
-.botao-preto:hover {
-    background: #292a1c;
-    color: white;
-}
-
-.informacoes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 35px;
-}
-
-.info {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-}
-
-.info-icone {
-    min-width: 43px;
-    height: 43px;
-    border: 1px solid #555540;
-    color: var(--dourado);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-size: 21px;
-}
-
-.info small, .info strong {
-    display: block;
-}
-
-.info small {
-    color: #a5a597;
-    font-size: 9px;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-}
-
-.info strong {
-    font-size: 12px;
-}
-
-/* RODAPÉ */
-
-footer {
-    padding: 30px 7%;
-    border-top: 1px solid #ffffff15;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-footer p, footer small {
-    color: #99998d;
-    font-size: 11px;
-}
-
-/* WHATSAPP FLUTUANTE */
-
-.whatsapp {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 63px;
-    height: 63px;
-    background: #25D366;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 5px 25px #0008;
-    z-index: 999;
-    transition: .3s;
-}
-
-.whatsapp:hover {
-    transform: scale(1.1);
-    box-shadow: 0 5px 25px #25D36670;
-}
-
-.whatsapp svg {
-    width: 34px;
-    height: 34px;
-    fill: white;
-}
-
-/* ANIMAÇÕES */
-
-@keyframes flutuar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-9px); }
-}
-
-@keyframes surgir {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* CELULARES E TABLETS */
-
-@media (max-width: 950px) {
-    .inicio {
-        padding-left: 5%;
-        padding-right: 5%;
-        gap: 25px;
-    }
-
-    .servicos, .sobre, .contato {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .grade-servicos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sobre {
-        gap: 40px;
-    }
-
-    nav {
-        gap: 15px;
-    }
-}
-
-@media (max-width: 700px) {
-    header {
-        padding: 14px 5%;
-    }
-
-    .logo h2 {
-        font-size: 35px;
-    }
-
-    .logo span {
-        font-size: 10px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    nav {
-        display: none;
-        position: absolute;
-        top: 74px;
-        left: 0;
-        width: 100%;
-        padding: 18px 5% 25px;
-        background: #10110d;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        border-bottom: 1px solid #ffffff20;
-    }
-
-    nav.ativo {
-        display: flex;
-    }
-
-    nav a {
-        padding: 13px 5px;
-    }
-
-    nav .botao {
-        margin-top: 10px;
-    }
-
-    .inicio {
-        grid-template-columns: 1fr;
-        padding: 65px 6% 75px;
-    }
-
-    .inicio h1 {
-        font-size: clamp(39px, 10vw, 57px);
-    }
-
-    .descricao {
-        font-size: 14px;
-    }
-
-    .imagem-inicio {
-        height: 390px;
-        max-width: 340px;
-        margin-top: 20px;
-    }
-
-    .servicos, .sobre, .contato {
-        padding: 70px 6%;
-    }
-
-    .cabecalho-secao {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .grade-servicos {
-        grid-template-columns: 1fr;
-    }
-
-    .card p {
-        min-height: auto;
-    }
-
-    .sobre {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .imagem-sobre {
-        height: 350px;
-        margin-right: 15px;
-    }
-
-    .selo {
-        width: 100px;
-        height: 100px;
-        right: -15px;
-    }
-
-    .caixa-contato {
-        padding: 28px 22px;
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .informacoes {
-        grid-template-columns: 1fr;
-        gap: 22px;
-    }
-
-    footer {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 28px 6%;
-    }
-
-    .whatsapp {
-        width: 57px;
-        height: 57px;
-        right: 16px;
-        bottom: 16px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation: none !important;
-        transition: none !important;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- NOME QUE PODE APARECER NO GOOGLE -->
+    <title>AL Serviços Gerais | Manutenção e Serviços</title>
+
+    <!-- DESCRIÇÃO PARA OS RESULTADOS DO GOOGLE -->
+    <meta name="description" content="AL Serviços Gerais oferece serviços de manutenção, limpeza, conservação e cuidados gerais com qualidade e confiança.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#123b2a">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f7f5;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #123b2a;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8ee5a5;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #8ee5a5;
+        }
+
+        .hero {
+            min-height: 480px;
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(90deg, rgba(10, 35, 23, 0.95),
+                rgba(10, 35, 23, 0.60)),
+                url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 28px;
+        }
+
+        .botao {
+            display: inline-block;
+            background: #25a65a;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            background: #188344;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 65px 8%;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 32px;
+            color: #123b2a;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+        }
+
+        .sobre {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .servicos {
+            background: white;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #f4f7f5;
+            padding: 28px 22px;
+            border-radius: 12px;
+            text-align: center;
+            border-bottom: 4px solid #25a65a;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .icone {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #123b2a;
+            margin-bottom: 10px;
+        }
+
+        .contato {
+            background: #123b2a;
+            color: white;
+            text-align: center;
+        }
+
+        .contato .titulo {
+            color: white;
+        }
+
+        .contato p {
+            margin-bottom: 25px;
+        }
+
+        footer {
+            background: #092218;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 14px;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 14px 18px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 65px 7%;
+            }
+
+            section {
+                padding: 50px 7%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <a href="#inicio" class="logo">
-        <h2>AL</h2>
-        <span>SERVIÇOS<br><strong>GERAIS</strong></span>
-    </a>
+    <header>
+        <div class="logo">AL <span>Serviços Gerais</span></div>
 
-    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" onclick="alternarMenu()">☰</button>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-    <nav id="menu">
-        <a href="#inicio" onclick="fecharMenu()">Início</a>
-        <a href="#servicos" onclick="fecharMenu()">Serviços</a>
-        <a href="#sobre" onclick="fecharMenu()">Sobre nós</a>
-        <a href="#contato" class="botao" onclick="fecharMenu()">Solicitar orçamento ↗</a>
-    </nav>
-</header>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1>AL Serviços Gerais</h1>
 
-<main>
+                <p>
+                    Soluções em manutenção, limpeza e serviços gerais.
+                    Qualidade, responsabilidade e confiança em cada trabalho.
+                </p>
 
-<section class="inicio" id="inicio">
-    <div class="conteudo-inicio">
-        <div class="etiqueta">CUIDADO, QUALIDADE E CONFIANÇA</div>
+                <a href="#servicos" class="botao">Conheça nossos serviços</a>
+            </div>
+        </section>
 
-        <h1>
-            Soluções práticas<br>
-            para cuidar do<br>
-            <span class="destaque">seu espaço.</span>
-        </h1>
+        <section id="sobre">
+            <h2 class="titulo">Quem Somos</h2>
 
-        <p class="descricao">
-            Manutenção residencial e comercial com atenção aos detalhes,
-            compromisso e serviço bem-feito. Conte com a AL Serviços Gerais!
-        </p>
+            <p class="sobre">
+                A AL Serviços Gerais trabalha para oferecer soluções
+                práticas para a manutenção, conservação e organização
+                de ambientes. Nosso objetivo é atender cada cliente
+                com dedicação, qualidade e responsabilidade.
+            </p>
+        </section>
 
-        <div class="botoes-inicio">
-            <a href="#servicos" class="botao">Conheça os serviços ↘</a>
+        <section class="servicos" id="servicos">
+            <h2 class="titulo">Nossos Serviços</h2>
 
-            <a href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
-               target="_blank" rel="noopener noreferrer"
-               class="botao botao-contorno">
-                Pedir orçamento
+            <p class="subtitulo">
+                Cuidado e atenção para diferentes necessidades.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icone">🧹</div>
+                    <h3>Limpeza</h3>
+                    <p>Limpeza e conservação de ambientes residenciais e comerciais.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">🔧</div>
+                    <h3>Manutenção</h3>
+                    <p>Serviços de manutenção e pequenos reparos conforme a necessidade.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">🏠</div>
+                    <h3>Cuidados Gerais</h3>
+                    <p>Auxílio na organização, conservação e cuidado dos ambientes.</p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">🛠️</div>
+                    <h3>Serviços Gerais</h3>
+                    <p>Soluções práticas para diferentes necessidades do dia a dia.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contato" id="contato">
+            <h2 class="titulo">Entre em Contato</h2>
+
+            <p>
+                Precisa de um serviço? Entre em contato para conversar
+                sobre suas necessidades.
+            </p>
+
+            <!-- SUBSTITUA PELO NÚMERO DE WHATSAPP DA EMPRESA -->
+            <a
+                href="https://wa.me/55DDDNÚMERO"
+                class="botao"
+                target="_blank"
+                rel="noopener noreferrer">
+                Fale pelo WhatsApp
             </a>
-        </div>
+        </section>
+    </main>
 
-        <div class="localizacao">
-            <span>⌖</span>
-            Atendimento em <strong>Maringá e região</strong>
-        </div>
-    </div>
+    <footer>
+        <p>© 2026 AL Serviços Gerais — Todos os direitos reservados.</p>
+    </footer>
 
-    <div class="imagem-inicio">
-        <img
-            src="https://images.unsplash.com/photo-1621905501183-9b5c1b7b7b6f?auto=format&fit=crop&w=1000&q=85"
-            alt="Profissional realizando serviço de manutenção"
-            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85';">
-
-        <div class="etiqueta-imagem">
-            ✦ Serviço com responsabilidade e atenção aos detalhes.
-        </div>
-    </div>
-</section>
-
-<section class="servicos" id="servicos">
-    <div class="cabecalho-secao">
-        <div>
-            <div class="etiqueta">COMO PODEMOS AJUDAR</div>
-            <h2>Serviços para facilitar<br>o seu <span class="destaque">dia a dia.</span></h2>
-        </div>
-
-        <p>
-            Soluções práticas para manter sua casa ou empresa em ordem.
-            Consulte os serviços disponíveis!
-        </p>
-    </div>
-
-    <div class="grade-servicos">
-
-        <article class="card">
-            <span class="numero">01</span>
-            <div class="icone">⚙</div>
-            <h3>Manutenção de aparelhos</h3>
-            <p>Cuidados e manutenção de aparelhos e equipamentos, conforme avaliação.</p>
-            <a href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20manuten%C3%A7%C3%A3o%20de%20aparelhos." target="_blank" rel="noopener noreferrer">Consultar serviço ↗</a>
-        </article>
-
-        <article class="card">
-            <span class="numero">02</span>
-            <div class="icone">❄</div>
-            <h3>Limpeza de ar-condicionado</h3>
-            <p>Cuidados com seu equipamento para ajudar a manter seu funcionamento adequado.</p>
-            <a href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20limpeza%20de%20ar-condicionado." target="_blank" rel="noopener noreferrer">Consultar serviço ↗</a>
-        </article>
-
-        <article class="card">
-            <span class="numero">03</span>
-            <div class="icone">▤</div>
-            <h3>Regulagem de blindex</h3>
-            <p>Ajustes e pequenos reparos em portas e estruturas de vidro.</p>
-            <a href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20consultar%20a%20regulagem%20de%20blindex." target="_blank" rel="noopener noreferrer">Consultar serviço ↗</a>
-        </article>
-
-        <article class="card">
-            <span class="numero">04</span>
-            <div class="icone">⌁</div>
-            <h3>Limpeza de calhas</h3>
-            <p>Remoção de folhas e resíduos para ajudar no escoamento da água.</p>
-            <a href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20limpeza%20de%20calhas." target="_blank" rel="noopener noreferrer">Consultar serviço ↗</a>
-        </article>
-
-        <article class="card">
-            <span class="numero">05</span>
-            <div class="icone">🌿</div>
-            <h3>Jardinagem</h3>
-            <p>Cuidados para deixar jardins e áreas externas mais organizados.</p>
-            <a href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20jardinagem." target="_blank" rel="noopener noreferrer">Consultar serviço ↗</a>
-        </article>
-
-        <article class="card">
-            <span class="numero">06</span>
-            <div class="icone">🔧</div>
-            <h3>Hidráulica e elétrica</h3>
-            <p>Reparos e manutenção para diferentes necessidades do dia a dia.</p>
-            <a href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20servi%C3%A7os%20de%20hidraulica%20e%20eletrica." target="_blank" rel="noopener noreferrer">Consultar serviço ↗</a>
-        </article>
-
-    </div>
-</section>
-
-<section class="sobre" id="sobre">
-    <div class="imagem-sobre">
-        <img
-            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85"
-            alt="Profissional trabalhando com manutenção e cuidados">
-
-        <div class="selo">
-            <strong>AL</strong>
-            <small>SERVIÇOS GERAIS</small>
-        </div>
-    </div>
-
-    <div class="texto-sobre">
-        <div class="etiqueta">POR QUE ESCOLHER A AL?</div>
-
-        <h2>
-            Trabalho bem-feito.<br>
-            <span class="destaque">Confiança em cada detalhe.</span>
-        </h2>
-
-        <p>
-            Sabemos que pequenos reparos fazem diferença.
-            Nosso objetivo é oferecer atendimento atencioso,
-            comunicação clara e cuidado em cada serviço.
-        </p>
-
-        <ul class="lista-beneficios">
-            <li>
-                <span class="check">✓</span>
-                <div>
-                    <strong>Atendimento atencioso</strong>
-                    <small>Comunicação clara para entender suas necessidades.</small>
-                </div>
-            </li>
-
-            <li>
-                <span class="check">✓</span>
-                <div>
-                    <strong>Compromisso com a qualidade</strong>
-                    <small>Cuidado com seu espaço e atenção aos detalhes.</small>
-                </div>
-            </li>
-
-            <li>
-                <span class="check">✓</span>
-                <div>
-                    <strong>Maringá e região</strong>
-                    <small>Atendimento regional mediante disponibilidade.</small>
-                </div>
-            </li>
-        </ul>
-
-        <a class="botao"
-           href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20servi%C3%A7os%20da%20AL."
-           target="_blank" rel="noopener noreferrer">
-            Vamos conversar ↗
-        </a>
-    </div>
-</section>
-
-<section class="contato" id="contato">
-    <div class="caixa-contato">
-        <div>
-            <div class="etiqueta">SEU PRÓXIMO REPARO COMEÇA AQUI</div>
-            <h2>Precisando de manutenção?</h2>
-            <p>Chame a AL Serviços Gerais e consulte seu orçamento.</p>
-        </div>
-
-        <a class="botao botao-preto"
-           href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AL%20Servi%C3%A7os%20Gerais%20e%20gostaria%20de%20um%20or%C3%A7amento."
-           target="_blank" rel="noopener noreferrer">
-            Solicitar orçamento ↗
-        </a>
-    </div>
-
-    <div class="informacoes">
-        <div class="info">
-            <span class="info-icone">⌖</span>
-            <div>
-                <small>ÁREA DE ATENDIMENTO</small>
-                <strong>Maringá e região — PR</strong>
-            </div>
-        </div>
-
-        <div class="info">
-            <span class="info-icone">◉</span>
-            <div>
-                <small>WHATSAPP</small>
-                <strong>(44) 99817-1716</strong>
-            </div>
-        </div>
-
-        <div class="info">
-            <span class="info-icone">◷</span>
-            <div>
-                <small>ATENDIMENTO</small>
-                <strong>Consulte disponibilidade</strong>
-            </div>
-        </div>
-    </div>
-</section>
-
-</main>
-
-<footer>
-    <a href="#inicio" class="logo">
-        <h2>AL</h2>
-        <span>SERVIÇOS<br><strong>GERAIS</strong></span>
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <!-- SUBSTITUA PELO NÚMERO DE WHATSAPP DA EMPRESA -->
+    <a
+        href="https://wa.me/55DDDNÚMERO"
+        class="whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Entre em contato pelo WhatsApp">
+        WhatsApp
     </a>
-
-    <p>Manutenção e cuidado para o seu espaço.</p>
-
-    <small>© <span id="ano"></span> AL Serviços Gerais.</small>
-</footer>
-
-<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
-<a class="whatsapp"
-   href="https://wa.me/5544998171716?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20servi%C3%A7os%20gerais."
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Entrar em contato pelo WhatsApp">
-
-    <svg viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M16.02 3C8.86 3 3.04 8.79 3.04 15.93c0 2.28.6 4.5 1.75 6.47L3 29l6.79-1.77a13.1 13.1 0 0 0 6.22 1.58h.01C23.18 28.81 29 23.02 29 15.88A12.9 12.9 0 0 0 16.02 3Zm0 23.6h-.01a10.8 10.8 0 0 1-5.5-1.5l-.4-.24-4.03 1.05 1.08-3.91-.26-.41a10.67 10.67 0 0 1-1.65-5.66c0-5.9 4.83-10.7 10.77-10.7a10.7 10.7 0 0 1 10.76 10.7c0 5.9-4.83 10.67-10.76 10.67Zm5.9-8.01c-.32-.16-1.9-.93-2.2-1.03-.3-.11-.51-.16-.72.16-.22.32-.83 1.03-1.02 1.24-.19.22-.37.24-.69.08-.32-.16-1.35-.5-2.57-1.6-.95-.84-1.6-1.88-1.79-2.2-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.56.16-.19.21-.32.32-.54.1-.22.05-.4-.03-.56-.08-.16-.72-1.73-.99-2.37-.26-.62-.53-.54-.72-.55h-.61c-.22 0-.56.08-.85.4-.3.32-1.12 1.09-1.12 2.66s1.15 3.08 1.31 3.29c.16.22 2.26 3.44 5.47 4.82.76.33 1.36.53 1.82.68.77.24 1.47.21 2.02.13.62-.09 1.9-.77 2.17-1.52.27-.76.27-1.41.19-1.55-.08-.14-.29-.22-.61-.38Z"/>
-    </svg>
-</a>
-
-<script>
-function alternarMenu() {
-    const menu = document.getElementById("menu");
-    const botao = document.querySelector(".menu-btn");
-    const aberto = menu.classList.toggle("ativo");
-
-    botao.setAttribute("aria-expanded", aberto);
-    botao.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
-    botao.textContent = aberto ? "×" : "☰";
-}
-
-function fecharMenu() {
-    const menu = document.getElementById("menu");
-    const botao = document.querySelector(".menu-btn");
-
-    menu.classList.remove("ativo");
-    botao.setAttribute("aria-expanded", "false");
-    botao.setAttribute("aria-label", "Abrir menu");
-    botao.textContent = "☰";
-}
-
-document.getElementById("ano").textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>
